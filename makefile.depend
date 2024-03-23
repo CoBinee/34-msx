@@ -1,0 +1,30 @@
+crt0.rel            :   crt0.s \
+                        main.inc
+main.rel            :   main.s main.inc \
+                        bios.inc System.inc
+System.rel          :   System.s System.inc \
+                        main.inc bios.inc vdp.inc
+Math.rel            :   Math.s Math.inc
+App.rel             :   App.s App.inc \
+                        bios.inc vdp.inc System.inc Title.inc Game.inc
+Sound.rel           :   Sound.s Sound.inc \
+                        bios.inc vdp.inc System.inc App.inc
+Title.rel           :   Title.s Title.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc
+Game.rel            :   Game.s Game.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Camera.inc Player.inc Shot.inc Enemy.inc Ground.inc
+Camera.rel          :   Camera.s Camera.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Ground.inc
+Player.rel          :   Player.s Player.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Game.inc Camera.inc Shot.inc Ground.inc
+Enemy.rel           :   Enemy.s Enemy.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Game.inc Camera.inc Player.inc EnemyOne.inc
+EnemyOne.rel        :   EnemyOne.s EnemyOne.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Game.inc Camera.inc Player.inc Enemy.inc
+Ground.rel          :   Ground.s Ground.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Game.inc Camera.inc
+Shot.rel            :   Shot.s Shot.inc \
+                        bios.inc vdp.inc System.inc App.inc Sound.inc Game.inc Camera.inc Ground.inc
+
+pattern.rel         :   pattern.s
+voice.rel           :   voice.s
